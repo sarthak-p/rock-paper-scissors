@@ -83,6 +83,25 @@ header > h1 {
     background: #E2584D; 
 }
 
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#restart {
+    padding: 14px 28px;
+    text-align: center; 
+    font-family: Asap, sans-serif; 
+    font-weight: bold; 
+    font-size: 20px; 
+    color: white; 
+    background: #30110D; 
+    cursor: pointer; 
+    border: 0.5px solid white;
+}
+
 #prompt {
     text-align: center; 
     color: white; 
