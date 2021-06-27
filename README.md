@@ -1,4 +1,4 @@
 # Rock-Paper-Scissors
-A simple implementation of the grade-school classic "rock paper scissors"
+A simple implementation of the grade-school classic "rock paper scissors".
 
-Click on this link to play live: 
+Click here to play live: https://sarthak-p.github.io/rock-paper-scissors/
