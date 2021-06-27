@@ -38,10 +38,8 @@ function win(userChoice, compChoice) {
     // const small_user = "Y".fontsize(3).sub();
     // const small_comp = "C".fontsize(3).sub();
     result_p.innerHTML = conversion_map[userChoice] + " beats " + conversion_map[compChoice];
-
     if (user_score == 5) {
-        result_p.innerHTML = "You win. Keep Playing!";
-        endGame(); 
+        endGame();
     }
 }
 
@@ -54,7 +52,6 @@ function lose(userChoice, compChoice) {
     // const small_comp = "C".fontsize(3).sub();
     result_p.innerHTML = conversion_map[userChoice] + " loses to " + conversion_map[compChoice];
     if (comp_score == 5) {
-        result_p.innerHTML = "You Lose. Try Again!";
         endGame();
     }
 }
@@ -64,6 +61,9 @@ function draw(userChoice, compChoice) {
     // const small_user = "Y".fontsize(3).sub();
     // const small_comp = "C".fontsize(3).sub();
     result_p.innerHTML = conversion_map[userChoice] + " obstructs " + conversion_map[compChoice];
+    if (comp_score == 5 || user_score == 5) {
+        endGame(); 
+    }
 }
 
 //function that plays one round 
@@ -90,10 +90,15 @@ function playRound(user_input) {
 
 //endGame after result  
 function endGame() {
+    if (user_score == 5) {
+        console.log(user_score);
+        result_p.innerHTML = "You win. Keep Playing!";
+    } else if (comp_score == 5) {
+        console.log(comp_score);
+        result_p.innerHTML = "You Lose. Try Again!";
+    }
     user_score = 0; 
     comp_score = 0; 
-    user_scoreSpan.innerHTML = user_score;
-    comp_scoreSpan.innerHTML = comp_score;
 }
 
 //endGame on button click 
