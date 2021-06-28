@@ -39,6 +39,7 @@ function win(userChoice, compChoice) {
     // const small_comp = "C".fontsize(3).sub();
     result_p.innerHTML = conversion_map[userChoice] + " beats " + conversion_map[compChoice];
     if (user_score == 5) {
+        result_p.innerHTML = "You win. Keep Playing!";
         endGame();
     }
 }
@@ -52,6 +53,7 @@ function lose(userChoice, compChoice) {
     // const small_comp = "C".fontsize(3).sub();
     result_p.innerHTML = conversion_map[userChoice] + " loses to " + conversion_map[compChoice];
     if (comp_score == 5) {
+        result_p.innerHTML = "You Lose. Try Again!";
         endGame();
     }
 }
@@ -90,13 +92,6 @@ function playRound(user_input) {
 
 //endGame after result  
 function endGame() {
-    if (user_score == 5) {
-        console.log(user_score);
-        result_p.innerHTML = "You win. Keep Playing!";
-    } else if (comp_score == 5) {
-        console.log(comp_score);
-        result_p.innerHTML = "You Lose. Try Again!";
-    }
     user_score = 0; 
     comp_score = 0; 
 }
@@ -112,7 +107,6 @@ function endGame1() {
 
 
 function main() {
-
     rock.addEventListener('click', function() {
         playRound("r");
     })
